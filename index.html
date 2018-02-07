@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>老虎机</title>
+    <link rel="stylesheet" href="css/a.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+    <div class="slotMachine">
+        <div id="oneContainer">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+    </div>
+    <div class="slotMachine">
+        <div style="width:100%;position:absolute;top:0;left:0;" id="oneContainer2">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+    </div>
+    <div class="slotMachine">
+        <div style="width:100%;position:absolute;top:0;left:0;" id="oneContainer3">
+            <div class="slot slot1"></div>
+            <div class="slot slot2"></div>
+            <div class="slot slot3"></div>
+            <div class="slot slot4"></div>
+            <div class="slot slot5"></div>
+            <div class="slot slot6"></div>
+        </div>
+    </div>
+    <!-- </div> -->
+
+    <div id="slotMachineButton1" class="slotMachineButton">GO!</div>
+    <div id="slotMachineButton2" class="slotMachineButton">stop!</div>
+    <!-- </div> -->
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        $(document).ready(function () {
+            let time = null;
+
+            function run() {
+                $("#oneContainer").animate({
+                        top: -600 + "px"
+                    },
+                    200,
+                    function () {
+                        $("#oneContainer").css("top", 0);
+                        time = setTimeout(function () {
+                            run();
+                        })
+                    }
+
+                )
+            }
+            var one = $("#oneContainer").slotMachine({
+                active: 0,
+            });
+            var two = $("#oneContainer2").slotMachine({
+                active: 0,
+            });
+            var three = $("#oneContainer3").slotMachine({
+                active: 0,
+            });
+
+            $("#slotMachineButton1").on("click", function () {
+                // run();
+                if (!one.isRun() && !two.isRun() && !three.isRun()) {
+                    one.running();
+                    two.running();
+                    three.running();
+                }
+
+            })
+            $("#slotMachineButton2").on("click", function () {
+                console.log(time);
+            
+                clearTimeout(time);
+                if (one.isRun() && two.isRun() && three.isRun()) {
+                    setTimeout(function () {
+                        one.stopRun(2);
+                    }, 0);
+                    setTimeout(function () {
+                        two.stopRun(3);
+                    }, 1000)
+                    setTimeout(function () {
+                        three.stopRun(4);
+                    }, 2000)
+                }
+
+
+
+            })
+        });
+    </script>
+</body>
+
+</html>

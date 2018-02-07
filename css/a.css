@@ -1,0 +1,57 @@
+
+
+.slotMachineButton {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+}
+
+.slotMachine {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    /* border: 5px solid #000;
+    background-color: #ffffff; */
+    position: relative;
+}
+
+#oneContainer {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.slotMachine .slot {
+    width: 100px;
+    height: 100px;
+}
+
+.slot1 {
+    background-image: url("../img/slot1.png");
+}
+
+.slot2 {
+    background-image: url("../img/slot2.png");
+}
+
+.slot3 {
+    background-image: url("../img/slot3.png");
+}
+
+.slot4 {
+    background-image: url("../img/slot4.png");
+}
+
+.slot5 {
+    background-image: url("../img/slot5.png");
+}
+
+.slot6 {
+    background-image: url("../img/slot6.png");
+}
