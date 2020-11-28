@@ -1,0 +1,32 @@
+{
+  "name": "weixin-share-test",
+  "publishPath": {
+    "prod": {
+      "path": "./dist",
+      "lockAfter": "test"
+    },
+    "temp": {
+      "path": "./dist"
+    },
+    "test": {
+      "path": "./dist"
+    }
+  },
+  "version": "1.0.0",
+  "description": "老虎机,可以实现老虎机的抽奖效果",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TreeZhou/laohuji.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TreeZhou/laohuji/issues"
+  },
+  "homepage": "https://github.com/TreeZhou/laohuji#readme"
+}
